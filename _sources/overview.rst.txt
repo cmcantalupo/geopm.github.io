@@ -346,6 +346,8 @@ Video Demo: Using ``geopmread``
 
     <video src="images/geopmread.webm" type="video/webm" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px; min-height: 200px"></video>
 
+----
+
 Reading Multiple Signals
 """"""""""""""""""""""""
 To fetch platform telemetry and output it to the console or a file:

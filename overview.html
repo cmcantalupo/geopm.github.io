@@ -50,7 +50,8 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#computer-install-geopm">💻 Install GEOPM</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#spack">Spack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packages-for-linux-distributions">Packages for Linux Distributions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-with-spack">Building with Spack</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#admin-configuration">Admin Configuration</a></li>
 </ul>
 </li>
@@ -135,13 +136,19 @@ algorithms, paving the way for enhanced energy efficiency.</p>
 <hr class="docutils" />
 <section id="computer-install-geopm">
 <h2>💻 Install GEOPM<a class="headerlink" href="#computer-install-geopm" title="Link to this heading"></a></h2>
+<p>There are two recommended ways to install the GEOPM software: one is to install
+the pre-built packages provided for various Linux distributions while the other
+is to build from source code using Spack.</p>
+<section id="packages-for-linux-distributions">
+<h3>Packages for Linux Distributions<a class="headerlink" href="#packages-for-linux-distributions" title="Link to this heading"></a></h3>
 <p>Pre-built binaries of the GEOPM Service and Runtime are available for download
 using the openSUSE Build Service for RPM-based Linux distributions and through
 Launchpad for Debian-based distributions.  For information on how to configure
 those repositories with your system package manager or directly download the
 binaries see: <a class="reference internal" href="install.html"><span class="doc">Installation</span></a></p>
-<section id="spack">
-<h3>Spack<a class="headerlink" href="#spack" title="Link to this heading"></a></h3>
+</section>
+<section id="building-with-spack">
+<h3>Building with Spack<a class="headerlink" href="#building-with-spack" title="Link to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Recipes for the v3.1 release of GEOPM are currently work-in-progress.</p>
@@ -151,23 +158,33 @@ recipes to build the <a class="reference external" href="https://github.com/spac
 and <a class="reference external" href="https://github.com/spack/spack/blob/v0.22.0/var/spack/repos/builtin/packages/geopm-runtime/package.py">geopm-runtime</a>
 have been included in their <a class="reference external" href="https://github.com/spack/spack/tree/v0.22.0">v0.22.0 release</a>.  These recipes currently allow
 for building both the v3.0.1 release of GEOPM and our main development branch.</p>
-<p>For deploying GEOPM’s layers to a compute image, a typical configuration would
-be to have a system install of the service RPMs baked into the compute image,
-and use spack to install <code class="docutils literal notranslate"><span class="pre">geopm-runtime</span></code>.  This is required as the GEOPM
-service will be launched via systemd, and thus must run against the system
-installed Python runtime.</p>
-<p>For GEOPM v3.0.1, system install <code class="docutils literal notranslate"><span class="pre">geopm-service</span></code>, <code class="docutils literal notranslate"><span class="pre">libgeopmd2</span></code>, and <code class="docutils literal notranslate"><span class="pre">python3-geopmdpy</span></code></p>
-<p>For GEOPM v3.1, system install <code class="docutils literal notranslate"><span class="pre">geopm-service</span></code>, <code class="docutils literal notranslate"><span class="pre">libgeopmd2</span></code>, <code class="docutils literal notranslate"><span class="pre">python3-geopmdpy</span></code>, and <code class="docutils literal notranslate"><span class="pre">python3-geopmdpy-doc</span></code></p>
+<p>For deploying GEOPM’s layers to a compute image in an HPC system context (i.e.
+PXE booted via warewulf or similar), a typical configuration would be to have a
+system install of the service RPMs baked into the compute image, and use spack
+to install <code class="docutils literal notranslate"><span class="pre">geopm-runtime</span></code>.  This is required as the GEOPM Service will be
+launched via systemd, and thus must run against the system installed Python
+runtime.</p>
+<p>For GEOPM v3.0.1, system install <code class="docutils literal notranslate"><span class="pre">geopm-service</span></code>, <code class="docutils literal notranslate"><span class="pre">geopm-service-devel</span></code>,
+<code class="docutils literal notranslate"><span class="pre">libgeopmd2</span></code>, and <code class="docutils literal notranslate"><span class="pre">python3-geopmdpy</span></code></p>
+<p>For GEOPM v3.1, system install <code class="docutils literal notranslate"><span class="pre">geopm-service</span></code>, <code class="docutils literal notranslate"><span class="pre">geopm-service-doc</span></code>,
+<code class="docutils literal notranslate"><span class="pre">geopm-service-devel</span></code>, <code class="docutils literal notranslate"><span class="pre">libgeopmd2</span></code>, <code class="docutils literal notranslate"><span class="pre">libgeopmd-doc</span></code>,
+<code class="docutils literal notranslate"><span class="pre">python3-geopmdpy</span></code>, and <code class="docutils literal notranslate"><span class="pre">python3-geopmdpy-doc</span></code></p>
 <p>In order to build with spack this way, <code class="docutils literal notranslate"><span class="pre">geopm-service</span></code> must be configured as an
 external package in <code class="docutils literal notranslate"><span class="pre">~/.spack/packages.yaml</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>packages:
-<span class="w">  </span>geopm-service:
-<span class="w">    </span>externals:
-<span class="w">    </span>-<span class="w"> </span>spec:<span class="w"> </span><span class="s2">&quot;geopm-service@3.0.1&quot;</span>
-<span class="w">      </span>prefix:<span class="w"> </span>/usr
-<span class="w">    </span>version:
-<span class="w">    </span>-<span class="w"> </span><span class="m">3</span>.0.1
-<span class="w">    </span>buildable:<span class="w"> </span>False
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">packages</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">geopm-service</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">externals</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">spec</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;geopm-service@3.0.1&quot;</span>
+<span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">spec</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;geopm-service@3.1.0&quot;</span>
+<span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">spec</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;geopm-service@develop&quot;</span>
+<span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.1.0</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">develop</span>
+<span class="w">    </span><span class="nt">buildable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </pre></div>
 </div>
 <p>Afterwards, <code class="docutils literal notranslate"><span class="pre">geopm-runtime</span></code> can be installed normally with <code class="docutils literal notranslate"><span class="pre">spack</span> <span class="pre">install</span>
@@ -823,7 +840,7 @@ at the <code class="docutils literal notranslate"><span class="pre">board</span>
 <section id="straight-ruler-measure-performance">
 <h2>📏 Measure Performance<a class="headerlink" href="#straight-ruler-measure-performance" title="Link to this heading"></a></h2>
 <p>The GEOPM Runtime offers capabilities for collecting telemetry throughout an
-application’s execution. If you’re aiming to measure a particular segment of an
+application’s execution. If you want to measure a particular segment of an
 application, you can annotate the application code using GEOPM markup.</p>
 <p>To integrate the Runtime with an application, you have two options:</p>
 <ol class="arabic simple">

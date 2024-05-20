@@ -79,7 +79,7 @@ Documentation
    :maxdepth: 1
 
    overview
-   user_guide
+   user_guides
    contrib
    devel
    publications

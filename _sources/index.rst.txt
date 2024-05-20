@@ -79,8 +79,7 @@ Documentation
    :maxdepth: 1
 
    overview
-   service
-   runtime
+   user_guide
    contrib
    devel
    publications

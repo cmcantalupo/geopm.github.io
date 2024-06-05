@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.1.1.dev9+gb277a5841</span>
+   &#160;<span id="projectnumber">3.1.1.dev9+g0922adde6</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -1773,8 +1773,8 @@ template&lt;class Type , class ... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Query environment for verbosity level. </p>
-<p>Read GEOPM_VERBOSITY environment variable. If set, convert to integer. If unset, or conversion fails, returns 0.</p>
-<p>Level 0: Print errors and critial warning messages Level 1: Print warning messages Level 2: Print diagnostic info messages</p>
+<p>Read GEOPM_VERBOSITY environment variable. If set, convert to integer. If unset, or conversion fails, returns default value. The default value is 0 unless the GEOPM software is compiled with &ndash;enable-debug configuration. When debug is enabled at compile time, the default value is 2.</p>
+<p>Level 0: Print errors and critical warning messages Level 1: Print warning messages Level 2: Print diagnostic info messages</p>
 <dl class="section return"><dt>Returns</dt><dd>Verbosity level for GEOPM messaging </dd></dl>
 
 </div>

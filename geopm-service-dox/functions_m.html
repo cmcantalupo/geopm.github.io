@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.1.1.dev32+gf4e5d18c2</span>
+   &#160;<span id="projectnumber">3.1.1.dev150+gd3c8eb8e1</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -71,6 +71,9 @@ $(function() {
 </li>
 <li>M_AVERAGE
 : <a class="el" href="classgeopm_1_1_agg.html#a3ce86bbe60d833454ebf22ab46b4cde0a2a7ce49aaf3bb2041e292649cf9ea937">geopm::Agg</a>
+</li>
+<li>m_card_paths
+: <a class="el" href="structhwmon__paths__s.html#a337f90016f492f8c360e74ec5eccdaf7">hwmon_paths_s</a>
 </li>
 <li>M_CPUID_BDX
 : <a class="el" href="classgeopm_1_1_m_s_r_i_o_group.html#a25bc68c490df1e60f70fe19df4f48d24a0a4fe2fc1ec429b97728b489199091c0">geopm::MSRIOGroup</a>
@@ -155,6 +158,9 @@ $(function() {
 </li>
 <li>M_FUNCTION_SCALE
 : <a class="el" href="classgeopm_1_1_m_s_r.html#adbe244b126ed149cd6a3f4037f78812eab3d15fc350957080a277b54469a5fc4d">geopm::MSR</a>
+</li>
+<li>m_gt_paths
+: <a class="el" href="structhwmon__paths__s.html#ad956c254a721ce55f960585d3239927d">hwmon_paths_s</a>
 </li>
 <li>M_INTEGER_BITWISE_OR
 : <a class="el" href="classgeopm_1_1_agg.html#a3ce86bbe60d833454ebf22ab46b4cde0a2df5318176473cc6e9dd00531466ef25">geopm::Agg</a>
@@ -266,6 +272,9 @@ $(function() {
 <li>m_type_e
 : <a class="el" href="classgeopm_1_1_agg.html#a3ce86bbe60d833454ebf22ab46b4cde0">geopm::Agg</a>
 </li>
+<li>M_UNITS_AMPERES
+: <a class="el" href="classgeopm_1_1_i_o_group.html#ad9eac8f5dfa61a6f7388ba0e187fcc1aa8e815f8604150e74bfb3033b42906f9a">geopm::IOGroup</a>
+</li>
 <li>M_UNITS_CELSIUS
 : <a class="el" href="classgeopm_1_1_i_o_group.html#ad9eac8f5dfa61a6f7388ba0e187fcc1aa7035dfa3c0d6cb3734a62a7e9e169667">geopm::IOGroup</a>
 </li>
@@ -284,14 +293,14 @@ $(function() {
 <li>M_UNITS_SECONDS
 : <a class="el" href="classgeopm_1_1_i_o_group.html#ad9eac8f5dfa61a6f7388ba0e187fcc1aaa806b5de6c1541294a19ac81aefbb772">geopm::IOGroup</a>
 </li>
+<li>M_UNITS_VOLTS
+: <a class="el" href="classgeopm_1_1_i_o_group.html#ad9eac8f5dfa61a6f7388ba0e187fcc1aa309b72a4762f58f56f3227afb3877673">geopm::IOGroup</a>
+</li>
 <li>M_UNITS_WATTS
 : <a class="el" href="classgeopm_1_1_i_o_group.html#ad9eac8f5dfa61a6f7388ba0e187fcc1aa844c899124ea564f5c10047d88e7431a">geopm::IOGroup</a>
 </li>
 <li>m_write_fd
 : <a class="el" href="classgeopm_1_1_batch_status_imp.html#a2ad1af3aa63f1650bc8cd98c9e72190f">geopm::BatchStatusImp</a>
-</li>
-<li>main()
-: <a class="el" href="classgeopm_1_1_batch_server.html#ab60badfc6ce0d40940a37ae9e02b5953">geopm::BatchServer</a>
 </li>
 <li>make_call_message()
 : <a class="el" href="classgeopm_1_1_s_d_bus.html#a8447d3676a0e8c578b6d9dd700f57eba">geopm::SDBus</a>
@@ -303,7 +312,6 @@ $(function() {
 , <a class="el" href="classgeopm_1_1_cpufreq_sysfs_driver.html#ad1d384f311cb2739b67f0477c925016c">geopm::CpufreqSysfsDriver</a>
 , <a class="el" href="classgeopm_1_1_cpuinfo_i_o_group.html#af18e23c253051c68c21ae8f5e5d65fcd">geopm::CpuinfoIOGroup</a>
 , <a class="el" href="classgeopm_1_1_d_c_g_m_i_o_group.html#aa77d79e1cc2d388143c0c759e8490259">geopm::DCGMIOGroup</a>
-, <a class="el" href="classgeopm_1_1_drm_sysfs_driver.html#ac7ef1f6e7139a311e81d0ced1ac7e1f1">geopm::DrmSysfsDriver</a>
 , <a class="el" href="classgeopm_1_1_level_zero_i_o_group.html#a44256a8b6f9ca9387dc8bd6bf89d8460">geopm::LevelZeroIOGroup</a>
 , <a class="el" href="classgeopm_1_1_m_s_r_i_o_group.html#a36ffed129afeac3772e13087728888ac">geopm::MSRIOGroup</a>
 , <a class="el" href="classgeopm_1_1_n_v_m_l_i_o_group.html#ae55049cb67a3c316225513e46d9ddd93">geopm::NVMLIOGroup</a>
@@ -311,6 +319,12 @@ $(function() {
 , <a class="el" href="classgeopm_1_1_service_i_o_group.html#ae041f951d03ce7d12d55408b5e78a0ca">geopm::ServiceIOGroup</a>
 , <a class="el" href="classgeopm_1_1_s_s_t_i_o_group.html#a8156a11fae2eae0acaba38aaaea2b697">geopm::SSTIOGroup</a>
 , <a class="el" href="classgeopm_1_1_time_i_o_group.html#a6f688d7478dd205aaa7a17a8c2fe4467">geopm::TimeIOGroup</a>
+</li>
+<li>make_plugin_accel()
+: <a class="el" href="classgeopm_1_1_drm_sysfs_driver.html#a376e4404fb7fa5e79faa7b8404764bf7">geopm::DrmSysfsDriver</a>
+</li>
+<li>make_plugin_drm()
+: <a class="el" href="classgeopm_1_1_drm_sysfs_driver.html#a31acc9a893d49b0b758fa5dac7c1af6c">geopm::DrmSysfsDriver</a>
 </li>
 <li>make_plugin_safe()
 : <a class="el" href="classgeopm_1_1_m_s_r_i_o_group.html#af74e975c067dafaf323cb56c4fc4a164">geopm::MSRIOGroup</a>
@@ -358,6 +372,7 @@ $(function() {
 </li>
 <li>max()
 : <a class="el" href="classgeopm_1_1_agg.html#a03c0457e4746f74d1bacca83a1deed33">geopm::Agg</a>
+, <a class="el" href="classgeopm_1_1_runtime_stats.html#a382096cdf2d24adf8a0f47c5289f41f4">geopm::RuntimeStats</a>
 </li>
 <li>max_samples()
 : <a class="el" href="classgeopm_1_1_d_c_g_m_device_pool.html#abefa90f81951c9a08a79f36bc2fc2ac1">geopm::DCGMDevicePool</a>
@@ -377,6 +392,9 @@ $(function() {
 <li>mbox_interface_param
 : <a class="el" href="structgeopm_1_1sst__mbox__interface__s.html#a03d61605d37703eec08124fec59502f2">geopm::sst_mbox_interface_s</a>
 </li>
+<li>mean()
+: <a class="el" href="classgeopm_1_1_runtime_stats.html#a737058a9d0e4f5d8e806d551e8229ba6">geopm::RuntimeStats</a>
+</li>
 <li>median()
 : <a class="el" href="classgeopm_1_1_agg.html#abc0449ee644c3420600e2658992c5ad6">geopm::Agg</a>
 </li>
@@ -389,8 +407,12 @@ $(function() {
 <li>message_last()
 : <a class="el" href="classgeopm_1_1_error_message.html#a4cca0fc2e504690f8e3d3a3a94fd7332">geopm::ErrorMessage</a>
 </li>
+<li>metric_name()
+: <a class="el" href="classgeopm_1_1_runtime_stats.html#a8e1eeefaa644c280411ebbdb4aacd303">geopm::RuntimeStats</a>
+</li>
 <li>min()
 : <a class="el" href="classgeopm_1_1_agg.html#a7f728f993c7c9bf0d253b8471078870b">geopm::Agg</a>
+, <a class="el" href="classgeopm_1_1_runtime_stats.html#ac34aa73d42147aaf2f6c182cf7482c85">geopm::RuntimeStats</a>
 </li>
 <li>mmio()
 : <a class="el" href="classgeopm_1_1_s_s_t_ioctl.html#a321750c42b45fa695ec90769e03efcc0">geopm::SSTIoctl</a>

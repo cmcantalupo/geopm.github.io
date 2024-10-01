@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.1.1.dev154+g8cc4d2174</span>
+   &#160;<span id="projectnumber">3.1.1.dev197+g1f214db77</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -99,6 +99,29 @@ $(function() {
 , <a class="el" href="classgeopm_1_1_time_i_o_group.html#a16a8b00e82128919c483c1c8b6fa3f4d">geopm::TimeIOGroup</a>
 , <a class="el" href="classgeopm_1_1_time_signal.html#a6111f836156c2c73ec9f6a0ac6f3e8d0">geopm::TimeSignal</a>
 </li>
+<li>SAMPLE_COUNT
+: <a class="el" href="classgeopm_1_1_stats_collector.html#a834aec65453eb42b260d4d5533faa68fa4d1c96722490d4e49a199f3e79e04391">geopm::StatsCollector</a>
+</li>
+<li>SAMPLE_PERIOD_MEAN
+: <a class="el" href="classgeopm_1_1_stats_collector.html#a834aec65453eb42b260d4d5533faa68fa59c99645e13bcb3f07995cf8b6e016b1">geopm::StatsCollector</a>
+</li>
+<li>SAMPLE_PERIOD_STD
+: <a class="el" href="classgeopm_1_1_stats_collector.html#a834aec65453eb42b260d4d5533faa68fa71854c41f4591e5c4055ffacf1714bc2">geopm::StatsCollector</a>
+</li>
+<li>sample_stats
+: <a class="el" href="structgeopm_1_1_stats_collector_1_1report__s.html#a4bd56e79fbd497f8f3272ff7c633240d">geopm::StatsCollector::report_s</a>
+, <a class="el" href="structgeopm__report__s.html#ab5e192a252a64dec5d7e910b2c2586cc">geopm_report_s</a>
+</li>
+<li>sample_stats_e
+: <a class="el" href="classgeopm_1_1_stats_collector.html#a834aec65453eb42b260d4d5533faa68f">geopm::StatsCollector</a>
+</li>
+<li>sample_time_first
+: <a class="el" href="structgeopm_1_1_stats_collector_1_1report__s.html#accce81e37064224816adada736755a05">geopm::StatsCollector::report_s</a>
+, <a class="el" href="structgeopm__report__s.html#a784506d4477db356b20e5437d6ec9ad7">geopm_report_s</a>
+</li>
+<li>SAMPLE_TIME_TOTAL
+: <a class="el" href="classgeopm_1_1_stats_collector.html#a834aec65453eb42b260d4d5533faa68fabd2a5c4dcf951bb1374e95580503b3cb">geopm::StatsCollector</a>
+</li>
 <li>save()
 : <a class="el" href="classgeopm_1_1_control.html#abdc7937f1de69e588f31cfa2539b49c1">geopm::Control</a>
 , <a class="el" href="classgeopm_1_1_domain_control.html#aee4fa35738d86f6cd61615c1264742e8">geopm::DomainControl</a>
@@ -112,20 +135,20 @@ $(function() {
 , <a class="el" href="classgeopm_1_1_d_c_g_m_i_o_group.html#a51baddf0e7fa0185c4669f412d834d0c">geopm::DCGMIOGroup</a>
 , <a class="el" href="classgeopm_1_1_i_o_group.html#a1a373bbc1df3675c5796970bf58e458a">geopm::IOGroup</a>
 , <a class="el" href="classgeopm_1_1_level_zero_i_o_group.html#af6c31985c6f1294a3ffa1107ae51beb8">geopm::LevelZeroIOGroup</a>
-, <a class="el" href="classgeopm_1_1_m_s_r_i_o_group.html#a7f9b1af640c5c5b1aae126fdf541ae6a">geopm::MSRIOGroup</a>
-, <a class="el" href="classgeopm_1_1_n_v_m_l_i_o_group.html#a1c38ab1459391123b4e2ce31cb0b1e0f">geopm::NVMLIOGroup</a>
-, <a class="el" href="classgeopm_1_1_platform_i_o.html#aeaf1b13d7055dd4aa49e9a248196740a">geopm::PlatformIO</a>
-, <a class="el" href="classgeopm_1_1_platform_i_o_imp.html#a7b2451ab99d26ac26358002ed906ffd0">geopm::PlatformIOImp</a>
+, <a class="el" href="classgeopm_1_1_m_s_r_i_o_group.html#acd7e26a0be070554584337cb4edeb867">geopm::MSRIOGroup</a>
+, <a class="el" href="classgeopm_1_1_n_v_m_l_i_o_group.html#ad777fc7b700ba7d485e3d98734f76c4a">geopm::NVMLIOGroup</a>
+, <a class="el" href="classgeopm_1_1_platform_i_o.html#a0d703b4b3e6505414bf67e6d0f95435a">geopm::PlatformIO</a>
+, <a class="el" href="classgeopm_1_1_platform_i_o_imp.html#a6159ad0177492d2960d40953f7245946">geopm::PlatformIOImp</a>
 , <a class="el" href="classgeopm_1_1_service_i_o_group.html#ad1e060004f5f288e491ee4458b5334ad">geopm::ServiceIOGroup</a>
 , <a class="el" href="classgeopm_1_1_s_s_t_i_o_group.html#a3a5649396b9bfe12293a30ebc0e3cae1">geopm::SSTIOGroup</a>
-, <a class="el" href="classgeopm_1_1_sysfs_i_o_group.html#add908afc49b4aebaf04c6d58e83e3fce">geopm::SysfsIOGroup</a>
+, <a class="el" href="classgeopm_1_1_sysfs_i_o_group.html#ad6240dffb199595f3a570a68e49ef918">geopm::SysfsIOGroup</a>
 , <a class="el" href="classgeopm_1_1_time_i_o_group.html#a8f009f9a2c3073c39733867c4f18e1c4">geopm::TimeIOGroup</a>
 </li>
 <li>SaveControl()
 : <a class="el" href="classgeopm_1_1_save_control.html#a80282a4bee9adc17c251ac7d343f1295">geopm::SaveControl</a>
 </li>
 <li>SaveControlImp()
-: <a class="el" href="classgeopm_1_1_save_control_imp.html#a81c6d442583190afa1a830e95c9cacb6">geopm::SaveControlImp</a>
+: <a class="el" href="classgeopm_1_1_save_control_imp.html#a557c1944fd1df557bcaaa0496c44eec0">geopm::SaveControlImp</a>
 </li>
 <li>scaling_factor
 : <a class="el" href="structgeopm_1_1_sysfs_driver_1_1properties__s.html#a457268525e2e6fb80b38cd44214df3d2">geopm::SysfsDriver::properties_s</a>
@@ -140,7 +163,7 @@ $(function() {
 : <a class="el" href="classgeopm_1_1_s_d_bus_message.html#a0454040d969a3d797d0a93289e45792c">geopm::SDBusMessage</a>
 </li>
 <li>SDBusMessageImp()
-: <a class="el" href="classgeopm_1_1_s_d_bus_message_imp.html#aa77dc36bd2588bca7aa3333265b67648">geopm::SDBusMessageImp</a>
+: <a class="el" href="classgeopm_1_1_s_d_bus_message_imp.html#a2187cbe8583be15b41df713b2c0e6384">geopm::SDBusMessageImp</a>
 </li>
 <li>secure_path()
 : <a class="el" href="classgeopm_1_1_secure_path.html#ada9e777c22f5424e20ec633d032f42bf">geopm::SecurePath</a>
@@ -346,8 +369,11 @@ $(function() {
 : <a class="el" href="classgeopm_1_1_platform_i_o.html#a0b5848135066ea30ec759184bbdb06d5">geopm::PlatformIO</a>
 , <a class="el" href="classgeopm_1_1_platform_i_o_imp.html#ad46a319fad5006401d56d8ba4651cd19">geopm::PlatformIOImp</a>
 </li>
+<li>stats
+: <a class="el" href="structgeopm__metric__stats__s.html#a7e404fa683edda68834d984cecfe1aab">geopm_metric_stats_s</a>
+</li>
 <li>StatsCollector()
-: <a class="el" href="classgeopm_1_1_stats_collector.html#a6ca57ad6696f3d76509fd4b8639046a5">geopm::StatsCollector</a>
+: <a class="el" href="classgeopm_1_1_stats_collector.html#ac663d75fd4103500096b36c15ec41f61">geopm::StatsCollector</a>
 </li>
 <li>std()
 : <a class="el" href="classgeopm_1_1_runtime_stats.html#a5112c7b7a72fd8d296b09ac902bac0bd">geopm::RuntimeStats</a>

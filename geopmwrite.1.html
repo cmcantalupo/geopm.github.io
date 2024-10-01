@@ -39,7 +39,7 @@
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                3.1.1.dev154+g8cc4d2174
+                3.1.1.dev197+g1f214db77
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -77,6 +77,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopmbench.1.html">geopmbench(1) – synthetic benchmark application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmctl.1.html">geopmctl(1) – GEOPM runtime control application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmendpoint.1.html">geopmendpoint(1) – command line tool for dynamic policy control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopmexporter.1.html">geopmexporter(1) – Prometheus exporter for GEOPM metrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmlaunch.1.html">geopmlaunch(1) – application launch wrapper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmread.1.html">geopmread(1) – query platform information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmsession.1.html">geopmsession(1) – Command line interface for the GEOPM service batch read features</a></li>
@@ -215,6 +216,12 @@
 </pre></div>
 </div>
 </section>
+<section id="enable-msr-fixed-counters">
+<h3>Enable MSR Fixed Counters<a class="headerlink" href="#enable-msr-fixed-counters" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geopmwrite<span class="w"> </span>--enable-fixed
+</pre></div>
+</div>
+</section>
 <section id="get-help-or-version">
 <h3>Get Help Or Version<a class="headerlink" href="#get-help-or-version" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geopmwrite<span class="w"> </span>--help
@@ -289,6 +296,13 @@ file exists from the current boot cycle and has the proper
 permissions no operation will be performed.  To force the
 creation of a new cache file, remove the existing cache file
 prior to executing this command.</p>
+</dd>
+<dt><kbd><span class="option">-e</span>, <span class="option">--enable-fixed</span></kbd></dt>
+<dd><p>Write to the registers that enable the fixed counters.  Enabling
+the fixed counters is required for the signals starting with
+<code class="docutils literal notranslate"><span class="pre">MSR::FIXED_CTR</span></code> to report non-zero values.  The signal
+<code class="docutils literal notranslate"><span class="pre">CPU_INSTRUCTIONS_RETIRED</span></code> also requires the fixed counters to
+be enabled.</p>
 </dd>
 <dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
 <dd><p>Print brief summary of the command line usage information, then

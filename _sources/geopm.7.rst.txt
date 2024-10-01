@@ -163,9 +163,9 @@ runtime configured to support OMPT if the default OpenMP runtime does
 not support the OMPT callbacks.  Note that your compiler must be
 compatible with the LLVM OpenMP ABI for extending it in this way.
 
-This feature can be disabled on a per-run basis by setting the
-``GEOPM_OMPT_DISABLE`` environment variable, or by using the
-``--geopm-ompt-disable`` option in :doc:`geopmlaunch(1) <geopmlaunch.1>`
+This feature can be enabled on a per-run basis by setting the
+``GEOPM_OMPT_ENABLE`` environment variable, or by using the
+``--geopm-ompt-enable`` option in :doc:`geopmlaunch(1) <geopmlaunch.1>`
 
 Choosing An Agent And Policy
 ----------------------------
@@ -269,14 +269,15 @@ specified regardless of the values set in the calling environment.
 GEOPM Environment Variables
 ---------------------------
 ``GEOPM_NUM_PROC``
-  The number of processes to be tracked and profiled by the controller
-  on each compute node. The controller will wait until this number of
-  processes request profiling before starting the control loop and
-  subsequent requests for profiling will be ignored by the controller.
-  This environment variable is useful when executing a non-MPI
-  application without :doc:`geopmlaunch(1) <geopmlaunch.1>` and in the
-  case where there is more than one process to be profiled.  The
-  default value for GEOPM_NUM_PROC is one.
+  The number of processes to be tracked and profiled by the controller on each
+  compute node. The controller will wait until this number of processes request
+  profiling before starting the control loop and subsequent requests for
+  profiling will be ignored by the controller.  If not set, the controller will
+  wait until at least one process has registered for profiling before beginning
+  the control loop.  The default value for GEOPM_NUM_PROC is one except when
+  using the ``geopmlaunch`` CLI.  The ``geopmlaunch`` tool will infer this
+  parameter based on the values passed to the underlying launch command, so the
+  user does not have to set it explicitly.
 ``GEOPM_PROGRAM_FILTER``
   Required comma separated list of program invocation names of
   processes which are intended to be profiled and tracked by the
@@ -346,10 +347,10 @@ GEOPM Environment Variables
   hyperthreads per CPU core. See the ``--geopm-hyperthreads-disable``
   :ref:`option description <geopm-hyperthreads-disable option>` in
   :doc:`geopmlaunch(1) <geopmlaunch.1>` for more details.
-``GEOPM_OMPT_DISABLE``
-  Set to any value to disable OpenMP region detection as described in
-  :ref:`geopm.7:integration with ompt`.  See the ``--geopm-ompt-disable``
-  :ref:`option description <geopm-ompt-disable option>` in :doc:`geopmlaunch(1)
+``GEOPM_OMPT_ENABLE``
+  Set to any value to enable OpenMP region detection as described in
+  :ref:`geopm.7:integration with ompt`.  See the ``--geopm-ompt-enable``
+  :ref:`option description <geopm-ompt-enable option>` in :doc:`geopmlaunch(1)
   <geopmlaunch.1>` for more details.
 ``GEOPM_INIT_CONTROL``
   The path to the control initialization file.  See the ``--geopm-init-control``
@@ -456,5 +457,6 @@ See Also
 :doc:`geopmread(1) <geopmread.1>`,
 :doc:`geopmwrite(1) <geopmwrite.1>`,
 :doc:`geopmaccess(1) <geopmaccess.1>`,
+:doc:`geopmsession(1) <geopmexporter.1>`,
 :doc:`geopmsession(1) <geopmsession.1>`,
 `ld.so(8) <https://man7.org/linux/man-pages/man8/ld.so.8.html>`_

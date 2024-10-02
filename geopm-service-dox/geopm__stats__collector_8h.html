@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.1.1.dev197+g1f214db77</span>
+   &#160;<span id="projectnumber">3.1.1.dev203+g439f43971</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -109,10 +109,29 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a9f9df709d248fcaaf05eed1eca58e6b4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geopm__stats__collector_8h.html#a9f9df709d248fcaaf05eed1eca58e6b4">geopm_report_sizes_e</a> { <a class="el" href="geopm__stats__collector_8h.html#a9f9df709d248fcaaf05eed1eca58e6b4aa82006a845d6df7414e000aeff305d0a">GEOPM_NUM_SAMPLE_STATS</a> = 4
-, <a class="el" href="geopm__stats__collector_8h.html#a9f9df709d248fcaaf05eed1eca58e6b4aaa1511f3c95e7414538ad68e371aa425">GEOPM_NUM_METRIC_STATS</a> = 7
+<tr class="memitem:a4619e09027022f929345ddf1571c448d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448d">geopm_sample_stats_e</a> { <br />
+&#160;&#160;<a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448dabe9a84967ea01ddede1181f7931588d0">GEOPM_SAMPLE_TIME_TOTAL</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448da59299d94e429ea61186a8fec145e1afd">GEOPM_SAMPLE_COUNT</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448da9f8953ee31347fbcfab466c162620531">GEOPM_SAMPLE_PERIOD_MEAN</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448dae6fad99c8e91374c64a287cebc72baf3">GEOPM_SAMPLE_PERIOD_STD</a>
+, <br />
+&#160;&#160;<a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448daa82006a845d6df7414e000aeff305d0a">GEOPM_NUM_SAMPLE_STATS</a>
+<br />
  }</td></tr>
-<tr class="separator:a9f9df709d248fcaaf05eed1eca58e6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a4619e09027022f929345ddf1571c448d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad71fe558aab77326510049543736c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8">geopm_metric_stats_e</a> { <br />
+&#160;&#160;<a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8ac9fbfc3332012d3a35e4a0ff9e585ffa">GEOPM_METRIC_COUNT</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8ae810d50d1b306ea28a72cc642b4f319c">GEOPM_METRIC_FIRST</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8a860ab57dbbcc178ea52800b7447d3cbc">GEOPM_METRIC_LAST</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8a63973e6a88b59ead7b7589751148ba38">GEOPM_METRIC_MIN</a>
+, <br />
+&#160;&#160;<a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8ad7f6f4632252e4f8cbdaffb1182adafd">GEOPM_METRIC_MAX</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8a030839d83b198361f63534bfa8b99634">GEOPM_METRIC_MEAN</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8a2b0d6bb270e8d4db9d35b364016183a6">GEOPM_METRIC_STD</a>
+, <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8aaa1511f3c95e7414538ad68e371aa425">GEOPM_NUM_METRIC_STATS</a>
+<br />
+ }</td></tr>
+<tr class="separator:a2ad71fe558aab77326510049543736c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -138,20 +157,47 @@ Functions</h2></td></tr>
 <tr class="separator:a7168350c441997895d35d0cc2b5bedfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a9f9df709d248fcaaf05eed1eca58e6b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f9df709d248fcaaf05eed1eca58e6b4">&#9670;&nbsp;</a></span>geopm_report_sizes_e</h2>
+<a id="a2ad71fe558aab77326510049543736c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad71fe558aab77326510049543736c8">&#9670;&nbsp;</a></span>geopm_metric_stats_e</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="geopm__stats__collector_8h.html#a9f9df709d248fcaaf05eed1eca58e6b4">geopm_report_sizes_e</a></td>
+          <td class="memname">enum <a class="el" href="geopm__stats__collector_8h.html#a2ad71fe558aab77326510049543736c8">geopm_metric_stats_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9f9df709d248fcaaf05eed1eca58e6b4aa82006a845d6df7414e000aeff305d0a"></a>GEOPM_NUM_SAMPLE_STATS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9f9df709d248fcaaf05eed1eca58e6b4aaa1511f3c95e7414538ad68e371aa425"></a>GEOPM_NUM_METRIC_STATS&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8ac9fbfc3332012d3a35e4a0ff9e585ffa"></a>GEOPM_METRIC_COUNT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8ae810d50d1b306ea28a72cc642b4f319c"></a>GEOPM_METRIC_FIRST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8a860ab57dbbcc178ea52800b7447d3cbc"></a>GEOPM_METRIC_LAST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8a63973e6a88b59ead7b7589751148ba38"></a>GEOPM_METRIC_MIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8ad7f6f4632252e4f8cbdaffb1182adafd"></a>GEOPM_METRIC_MAX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8a030839d83b198361f63534bfa8b99634"></a>GEOPM_METRIC_MEAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8a2b0d6bb270e8d4db9d35b364016183a6"></a>GEOPM_METRIC_STD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ad71fe558aab77326510049543736c8aaa1511f3c95e7414538ad68e371aa425"></a>GEOPM_NUM_METRIC_STATS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a4619e09027022f929345ddf1571c448d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4619e09027022f929345ddf1571c448d">&#9670;&nbsp;</a></span>geopm_sample_stats_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="geopm__stats__collector_8h.html#a4619e09027022f929345ddf1571c448d">geopm_sample_stats_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4619e09027022f929345ddf1571c448dabe9a84967ea01ddede1181f7931588d0"></a>GEOPM_SAMPLE_TIME_TOTAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4619e09027022f929345ddf1571c448da59299d94e429ea61186a8fec145e1afd"></a>GEOPM_SAMPLE_COUNT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4619e09027022f929345ddf1571c448da9f8953ee31347fbcfab466c162620531"></a>GEOPM_SAMPLE_PERIOD_MEAN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4619e09027022f929345ddf1571c448dae6fad99c8e91374c64a287cebc72baf3"></a>GEOPM_SAMPLE_PERIOD_STD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4619e09027022f929345ddf1571c448daa82006a845d6df7414e000aeff305d0a"></a>GEOPM_NUM_SAMPLE_STATS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

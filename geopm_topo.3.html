@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>geopm_topo(3) – query platform component topology &mdash; GEOPM  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +35,6 @@
             GEOPM
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -285,7 +279,7 @@ negative error code is returned if <em>inner_domain</em> is not within
 <dt><code class="docutils literal notranslate"><span class="pre">geopm_topo_domain_name()</span></code></dt><dd><p>Sets the <em>domain_name</em> string to the name associated with the
 <em>domain_type</em> selected from the <code class="docutils literal notranslate"><span class="pre">geopm_domain_e</span></code> enum.  At most
 <em>result_max</em> bytes are written to the <em>domain_name</em> string.
-Providing a string of <code class="docutils literal notranslate"><span class="pre">NAME_MAX</span></code> length (from <code class="docutils literal notranslate"><span class="pre">limits.h</span></code>) will be
+Providing a string of <code class="docutils literal notranslate"><span class="pre">GEOPM_NAME_MAX</span></code> length (from <code class="docutils literal notranslate"><span class="pre">geopm_pio.h</span></code>) will be
 sufficient for storing any result.  If <em>result_max</em> is too small
 to contain the domain name an error will occur.  Zero is returned
 on success and a negative error code is returned if any error

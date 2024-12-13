@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>geopmexporter(1) – Prometheus exporter for GEOPM metrics &mdash; GEOPM  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +35,6 @@
             GEOPM
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -270,7 +264,7 @@ samples over time.  In this way the batch of signals read from the GEOPM is used
 to update a <code class="docutils literal notranslate"><span class="pre">Summary</span></code> metric for GEOPM signals with variable behavior, or a
 <code class="docutils literal notranslate"><span class="pre">Counter</span></code> metric for signals with monotone behavior.  Each metric provides
 slightly different statistics for the Prometheus server on the port opened by
-<code class="docutils literal notranslate"><span class="pre">geopmexporter</span></code>.  the <code class="docutils literal notranslate"><span class="pre">Summary</span></code> metric exports the <strong>count</strong> and <strong>sum</strong>
+<code class="docutils literal notranslate"><span class="pre">geopmexporter</span></code>.  The <code class="docutils literal notranslate"><span class="pre">Summary</span></code> metric exports the <strong>count</strong> and <strong>sum</strong>
 statistics, where as the <code class="docutils literal notranslate"><span class="pre">Counter</span></code> metric exports the <strong>count</strong> and <strong>total</strong>
 statistics.  GEOPM calls into the Prometheus metrics through a Python interface.
 This means that the quartile metrics are not currently supported for <code class="docutils literal notranslate"><span class="pre">Summary</span></code>
@@ -317,7 +311,7 @@ notified of the new service.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>groupadd<span class="w"> </span>--system<span class="w"> </span>prometheus
 sudo<span class="w"> </span>useradd<span class="w"> </span>-s<span class="w"> </span>/sbin/nologin<span class="w"> </span>--system<span class="w"> </span>-g<span class="w"> </span>prometheus<span class="w"> </span>prometheus
 sudo<span class="w"> </span>cp<span class="w"> </span>geopmexporter.service<span class="w"> </span>/etc/systemd/system/
-sudo<span class="w"> </span>systemctl<span class="w"> </span>deamon-reload
+sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
 sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>geopmexporter
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>geopmexporter
 </pre></div>

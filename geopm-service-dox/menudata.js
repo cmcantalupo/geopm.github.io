@@ -150,13 +150,9 @@ var menudata={children:[
 {text:"_",url:"globals.html#index__5F"},
 {text:"c",url:"globals.html#index_c"},
 {text:"d",url:"globals.html#index_d"},
-{text:"g",url:"globals.html#index_g"},
-{text:"m",url:"globals.html#index_m"},
-{text:"p",url:"globals.html#index_p"}]},
+{text:"g",url:"globals.html#index_g"}]},
 {text:"Functions",url:"globals_func.html",children:[
-{text:"g",url:"globals_func.html#index_g"},
-{text:"m",url:"globals_func.html#index_m"},
-{text:"p",url:"globals_func.html#index_p"}]},
+{text:"g",url:"globals_func.html#index_g"}]},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[

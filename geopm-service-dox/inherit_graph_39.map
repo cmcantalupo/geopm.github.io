@@ -1,5 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classgeopm_1_1_service_proxy.html" title="Proxy object for the io.github.geopm D&#45;Bus interface used to implement the ServiceIOGroup." alt="" coords="5,31,165,57"/>
-<area shape="rect" id="node2" href="$classgeopm_1_1_g_r_p_c_service_proxy.html" title=" " alt="" coords="213,5,409,32"/>
-<area shape="rect" id="node3" href="$classgeopm_1_1_service_proxy_imp.html" title=" " alt="" coords="219,56,404,83"/>
+<area shape="rect" id="node1" href="$classgeopm_1_1_service_proxy.html" title="Proxy object for the io.github.geopm D&#45;Bus interface used to implement the ServiceIOGroup." alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node2" href="$classgeopm_1_1_service_proxy_imp.html" title=" " alt="" coords="213,5,399,32"/>
 </map>

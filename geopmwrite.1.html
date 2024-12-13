@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>geopmwrite(1) – modify platform state &mdash; GEOPM  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +35,6 @@
             GEOPM
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -210,6 +204,9 @@
 </pre></div>
 </div>
 </section>
+<section id="write-multiple-controls">
+<h3>Write Multiple Controls<a class="headerlink" href="#write-multiple-controls" title="Link to this heading"></a></h3>
+</section>
 <section id="create-cache">
 <h3>Create Cache<a class="headerlink" href="#create-cache" title="Link to this heading"></a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>geopmwrite<span class="w"> </span>--cache
@@ -297,6 +294,14 @@ permissions no operation will be performed.  To force the
 creation of a new cache file, remove the existing cache file
 prior to executing this command.</p>
 </dd>
+<dt><kbd><span class="option">-f</span>, <span class="option">--config</span></kbd></dt>
+<dd><p>Read control name, control domain, control index and control value
+from a configuration file rather than using the positional
+arguments.  These four parameters are provided on each line of
+the file separated by white space.  The file may have many lines
+specifying multiple controls to be written. Providing <code class="docutils literal notranslate"><span class="pre">-</span></code> for this
+option specifies to read the configuration from standard input.</p>
+</dd>
 <dt><kbd><span class="option">-e</span>, <span class="option">--enable-fixed</span></kbd></dt>
 <dd><p>Write to the registers that enable the fixed counters.  Enabling
 the fixed counters is required for the signals starting with
@@ -356,6 +361,15 @@ $ geopmread CPU_FREQUENCY_MAX_CONTROL cpu 2
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ geopmwrite CPU_FREQUENCY_MAX_CONTROL package 0 1.5e9
 $ geopmread CPU_FREQUENCY_MAX_CONTROL cpu 1
 1.5e9
+</pre></div>
+</div>
+<p>Set the uncore frequency of all CPUs to 1.5 GHz. Perform the operation in a
+single GEOPM batch-write request instead of across multiple <cite>geopmwrite</cite>
+commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ printf &#39;CPU_UNCORE_FREQUENCY_MAX_CONTROL board 0 1.5e9\nCPU_UNCORE_FREQUENCY_MIN_CONTROL board 0 1.5e9\n&#39; | geopmwrite --config=-
+$ printf &#39;CPU_UNCORE_FREQUENCY_MAX_CONTROL board 0\nCPU_UNCORE_FREQUENCY_MIN_CONTROL board 0\n&#39; | geopmsession
+&quot;CPU_UNCORE_FREQUENCY_MAX_CONTROL&quot;,&quot;CPU_UNCORE_FREQUENCY_MIN_CONTROL&quot;
+1500000000,1500000000
 </pre></div>
 </div>
 </section>

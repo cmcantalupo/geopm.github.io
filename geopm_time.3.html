@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -6,19 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>geopm_time(3) – helper methods for time &mdash; GEOPM  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,9 +35,6 @@
             GEOPM
               <img src="https://geopm.github.io/images/geopm-logo-clear.png" class="logo" alt="Logo"/>
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -182,7 +176,9 @@
 <p>#include <a class="reference external" href="https://github.com/geopm/geopm/blob/dev/libgeopmd/include/geopm_time.h">&lt;geopm_time.h&gt;</a></p>
 <p>Link with <code class="docutils literal notranslate"><span class="pre">-lgeopm</span></code> <strong>(MPI)</strong> or <code class="docutils literal notranslate"><span class="pre">-lgeopm</span></code> <strong>(non-MPI)</strong></p>
 <p>C interfaces:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">geopm_time_string</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">buf_size</span><span class="p">,</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define GEOPM_TIME_STRING_MAX 255ULL</span>
+
+<span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">geopm_time_string</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">buf_size</span><span class="p">,</span>
 <span class="w">                                    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buf</span><span class="p">);</span>
 
 <span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">geopm_time</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">geopm_time_s</span><span class="w"> </span><span class="o">*</span><span class="n">time</span><span class="p">);</span>
@@ -247,6 +243,9 @@ a <code class="docutils literal notranslate"><span class="pre">CLOCK_MONOTONIC_R
 <code class="docutils literal notranslate"><span class="pre">geopm_time_zero()</span></code> and in C++ with <code class="docutils literal notranslate"><span class="pre">geopm::time_zero()</span></code>.  There is also a
 way to reset this reference with <code class="docutils literal notranslate"><span class="pre">geopm_time_zero_reset()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">geopm:time_zero_reset()</span></code> by providing a <code class="docutils literal notranslate"><span class="pre">CLOCK_MONOTONIC_RAW</span></code> time value.</p>
+<p>The constant <code class="docutils literal notranslate"><span class="pre">GEOPM_TIME_STRING_MAX</span></code> may be used to allocate <em>buf</em> results
+for any of the C geopm_time_* function calls, although this value is larger than
+is generally required.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">geopm_time_string()</span></code></dt><dd><p>Fills <em>buf</em> with the current date and time as a string.  The
 string will be null-terminated and truncated to <em>buf_size</em>, which

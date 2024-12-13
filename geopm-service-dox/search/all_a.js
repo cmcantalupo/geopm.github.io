@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['json_412',['Json',['../classjson11_1_1_json_value.html#a88615a18c861628dda6e8a4381577bdc',1,'json11::JsonValue']]],
-  ['json_413',['json',['../classgeopm_1_1_save_control.html#a5b4541bb3b7d8793d53db1251445f0b2',1,'geopm::SaveControl::json()'],['../classgeopm_1_1_save_control_imp.html#af5cdbbd1fb5195d42a6cac1466b1c249',1,'geopm::SaveControlImp::json(void) const override'],['../classgeopm_1_1_save_control_imp.html#a12e1634afb00787113621716bdf1b96d',1,'geopm::SaveControlImp::json(const std::vector&lt; m_setting_s &gt; &amp;settings)']]],
+  ['json_412',['json',['../classgeopm_1_1_save_control.html#a5b4541bb3b7d8793d53db1251445f0b2',1,'geopm::SaveControl::json()'],['../classgeopm_1_1_save_control_imp.html#af5cdbbd1fb5195d42a6cac1466b1c249',1,'geopm::SaveControlImp::json(void) const override'],['../classgeopm_1_1_save_control_imp.html#a12e1634afb00787113621716bdf1b96d',1,'geopm::SaveControlImp::json(const std::vector&lt; m_setting_s &gt; &amp;settings)']]],
+  ['json_413',['Json',['../classjson11_1_1_json_value.html#a88615a18c861628dda6e8a4381577bdc',1,'json11::JsonValue']]],
   ['json11_414',['json11',['../namespacejson11.html',1,'']]],
   ['json11_2ehpp_415',['json11.hpp',['../json11_8hpp.html',1,'']]],
   ['json_5fchecker_416',['json_checker',['../structgeopm_1_1json__checker.html',1,'geopm']]],

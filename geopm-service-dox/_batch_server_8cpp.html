@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">geopm
-   &#160;<span id="projectnumber">3.1.1.dev204+g5692029b9</span>
+   &#160;<span id="projectnumber">3.1.1.dev276+g541d93d97</span>
    </div>
    <div id="projectbrief">GEOPM - Global Extensible Open Power Manager</div>
   </td>
@@ -77,13 +77,9 @@ $(function() {
 <code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;cerrno&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;limits.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;wait.h&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;cstring&gt;</code><br />
-<code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &quot;<a class="el" href="geopm__error_8h_source.html">geopm_error.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="geopm__sched_8h_source.html">geopm_sched.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_exception_8hpp_source.html">geopm/Exception.hpp</a>&quot;</code><br />
@@ -98,44 +94,42 @@ Include dependency graph for BatchServer.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_batch_server_8cpp__incl.png" border="0" usemap="#a_batch_server_8cpp" alt=""/></div>
 <map name="a_batch_server_8cpp" id="a_batch_server_8cpp">
-<area shape="rect" title=" " alt="" coords="1658,5,1785,32"/>
-<area shape="rect" href="_batch_server_8hpp.html" title=" " alt="" coords="735,155,863,181"/>
-<area shape="rect" title=" " alt="" coords="1093,229,1152,256"/>
-<area shape="rect" title=" " alt="" coords="1915,80,1981,107"/>
-<area shape="rect" title=" " alt="" coords="2005,80,2067,107"/>
-<area shape="rect" title=" " alt="" coords="2092,80,2167,107"/>
-<area shape="rect" title=" " alt="" coords="1669,304,1739,331"/>
-<area shape="rect" title=" " alt="" coords="2191,80,2265,107"/>
-<area shape="rect" title=" " alt="" coords="2290,80,2353,107"/>
-<area shape="rect" title=" " alt="" coords="2377,80,2457,107"/>
-<area shape="rect" title=" " alt="" coords="2481,80,2548,107"/>
-<area shape="rect" title=" " alt="" coords="1695,229,1782,256"/>
-<area shape="rect" href="geopm__error_8h.html" title=" " alt="" coords="1407,229,1523,256"/>
-<area shape="rect" href="geopm__sched_8h.html" title=" " alt="" coords="1823,155,1947,181"/>
-<area shape="rect" href="_exception_8hpp.html" title=" " alt="" coords="1507,155,1669,181"/>
-<area shape="rect" href="_platform_i_o_8hpp.html" title=" " alt="" coords="490,155,659,181"/>
-<area shape="rect" href="_shared_memory_8hpp.html" title=" " alt="" coords="249,155,445,181"/>
-<area shape="rect" href="_helper_8hpp.html" title=" " alt="" coords="1240,155,1381,181"/>
-<area shape="rect" href="_batch_status_8hpp.html" title=" " alt="" coords="1039,80,1167,107"/>
-<area shape="rect" href="_p_o_s_i_x_signal_8hpp.html" title=" " alt="" coords="887,155,1017,181"/>
-<area shape="rect" href="geopm__debug_8hpp.html" title=" " alt="" coords="1595,80,1738,107"/>
-<area shape="rect" title=" " alt="" coords="629,229,707,256"/>
-<area shape="rect" title=" " alt="" coords="731,229,794,256"/>
-<area shape="rect" title=" " alt="" coords="818,229,905,256"/>
-<area shape="rect" title=" " alt="" coords="929,229,1002,256"/>
-<area shape="rect" title=" " alt="" coords="866,304,937,331"/>
-<area shape="rect" href="geopm__public_8h.html" title=" " alt="" coords="1212,304,1337,331"/>
-<area shape="rect" title=" " alt="" coords="1857,229,1924,256"/>
-<area shape="rect" title=" " alt="" coords="1599,229,1671,256"/>
-<area shape="rect" title=" " alt="" coords="408,229,475,256"/>
-<area shape="rect" title=" " alt="" coords="1027,229,1069,256"/>
-<area shape="rect" href="geopm__pio_8h.html" title=" " alt="" coords="499,229,605,256"/>
-<area shape="rect" title=" " alt="" coords="515,304,589,331"/>
-<area shape="rect" href="_shared_memory_scoped_lock_8hpp.html" title=" " alt="" coords="5,229,232,256"/>
-<area shape="rect" title=" " alt="" coords="77,304,161,331"/>
-<area shape="rect" title=" " alt="" coords="1313,229,1383,256"/>
-<area shape="rect" title=" " alt="" coords="1177,229,1237,256"/>
-<area shape="rect" title=" " alt="" coords="1041,155,1165,181"/>
+<area shape="rect" title=" " alt="" coords="933,5,1060,32"/>
+<area shape="rect" href="_batch_server_8hpp.html" title=" " alt="" coords="831,155,959,181"/>
+<area shape="rect" title=" " alt="" coords="1111,80,1176,107"/>
+<area shape="rect" title=" " alt="" coords="1200,80,1263,107"/>
+<area shape="rect" title=" " alt="" coords="1287,80,1362,107"/>
+<area shape="rect" title=" " alt="" coords="1386,80,1461,107"/>
+<area shape="rect" title=" " alt="" coords="1485,80,1548,107"/>
+<area shape="rect" title=" " alt="" coords="1573,80,1653,107"/>
+<area shape="rect" href="geopm__error_8h.html" title=" " alt="" coords="5,229,121,256"/>
+<area shape="rect" href="geopm__sched_8h.html" title=" " alt="" coords="1692,155,1816,181"/>
+<area shape="rect" href="_exception_8hpp.html" title=" " alt="" coords="122,155,285,181"/>
+<area shape="rect" href="_platform_i_o_8hpp.html" title=" " alt="" coords="1137,155,1307,181"/>
+<area shape="rect" href="_shared_memory_8hpp.html" title=" " alt="" coords="360,155,556,181"/>
+<area shape="rect" href="_helper_8hpp.html" title=" " alt="" coords="1331,155,1473,181"/>
+<area shape="rect" href="_batch_status_8hpp.html" title=" " alt="" coords="681,80,809,107"/>
+<area shape="rect" href="_p_o_s_i_x_signal_8hpp.html" title=" " alt="" coords="984,155,1113,181"/>
+<area shape="rect" href="geopm__debug_8hpp.html" title=" " alt="" coords="251,80,393,107"/>
+<area shape="rect" title=" " alt="" coords="893,229,970,256"/>
+<area shape="rect" title=" " alt="" coords="995,229,1057,256"/>
+<area shape="rect" title=" " alt="" coords="711,229,770,256"/>
+<area shape="rect" title=" " alt="" coords="1081,229,1168,256"/>
+<area shape="rect" title=" " alt="" coords="795,229,868,256"/>
+<area shape="rect" title=" " alt="" coords="183,304,253,331"/>
+<area shape="rect" href="geopm__public_8h.html" title=" " alt="" coords="611,304,737,331"/>
+<area shape="rect" title=" " alt="" coords="1767,229,1834,256"/>
+<area shape="rect" title=" " alt="" coords="1671,229,1743,256"/>
+<area shape="rect" title=" " alt="" coords="197,229,284,256"/>
+<area shape="rect" title=" " alt="" coords="1193,229,1235,256"/>
+<area shape="rect" href="geopm__pio_8h.html" title=" " alt="" coords="1361,229,1467,256"/>
+<area shape="rect" title=" " alt="" coords="1425,304,1499,331"/>
+<area shape="rect" title=" " alt="" coords="1329,304,1400,331"/>
+<area shape="rect" href="_shared_memory_scoped_lock_8hpp.html" title=" " alt="" coords="410,229,637,256"/>
+<area shape="rect" title=" " alt="" coords="481,304,565,331"/>
+<area shape="rect" title=" " alt="" coords="1576,229,1647,256"/>
+<area shape="rect" title=" " alt="" coords="1492,229,1552,256"/>
+<area shape="rect" title=" " alt="" coords="683,155,807,181"/>
 </map>
 </div>
 </div><table class="memberdecls">

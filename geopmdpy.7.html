@@ -258,7 +258,7 @@ the default access list that is enabled for all users.</p>
 interface is called.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix group name to get access list for.  Gets
+<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix Group ID to get access list for.  Gets
 the default control access list if group
 provided is ‘’: the empty string.</p>
 </dd>
@@ -280,7 +280,7 @@ The returned string has one signal name on each line, and is in sorted order.</p
 <p>The default signal access list is returned if the group
 provided is the empty string.  If the group provided is not
 empty then the list of signals that are enabled for the
-specified Unix group is returned.</p>
+specified Unix Group ID is returned.</p>
 <p>A user process accessing the GEOPM D-Bus APIs is restricted to
 the combination of the default access list and the access list
 for all groups that the user belongs to.  The results from
@@ -290,7 +290,7 @@ the default access list that is enabled for all users.</p>
 interface is called.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix group name to get access list for.  Gets
+<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix Group ID to get access list for.  Gets
 the default signal access list if group
 provided is ‘’: the empty string.</p>
 </dd>
@@ -413,7 +413,7 @@ of the io.github.geopm interface is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix group name to set access list for.  The
+<li><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix Group ID to set access list for.  The
 call sets the default control access list if
 group provided is ‘’.</p></li>
 <li><p><strong>controls</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>)</em>) – List of all control names that are
@@ -443,7 +443,7 @@ of the io.github.geopm interface is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix group name to set access list for.  The
+<li><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Unix Group ID to set access list for.  The
 call sets the default signal access list if
 group provided is ‘’.</p></li>
 <li><p><strong>signals</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>)</em>) – List of all signal names that are
@@ -1335,12 +1335,6 @@ or ends without closing all sessions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="geopmdpy.service.PlatformService.close_inactive_clients">
-<span class="sig-name descname"><span class="pre">close_inactive_clients</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.service.PlatformService.close_inactive_clients" title="Link to this definition"></a></dt>
-<dd><p>Close all sessions with inactive clients.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="geopmdpy.service.PlatformService.close_session">
 <span class="sig-name descname"><span class="pre">close_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_pid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.service.PlatformService.close_session" title="Link to this definition"></a></dt>
 <dd><p>Close an active session for the client process.</p>
@@ -1921,12 +1915,6 @@ enabled when this method is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="geopmdpy.service.PlatformService.watch_interval">
-<span class="sig-name descname"><span class="pre">watch_interval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.service.PlatformService.watch_interval" title="Link to this definition"></a></dt>
-<dd><p>Return the PID polling interval, in seconds.</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="geopmdpy.service.PlatformService.write_control">
 <span class="sig-name descname"><span class="pre">write_control</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_pid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">control_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setting</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.service.PlatformService.write_control" title="Link to this definition"></a></dt>
 <dd><p>Write a control value to a particular domain.</p>
@@ -2182,6 +2170,21 @@ reports.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="geopmdpy.session.Session.check_requests">
+<span class="sig-name descname"><span class="pre">check_requests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requests</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.session.Session.check_requests" title="Link to this definition"></a></dt>
+<dd><p>Check whether the signal requests are valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>requests</strong> (<a class="reference internal" href="#geopmdpy.session.ReadRequestQueue" title="geopmdpy.session.ReadRequestQueue"><em>ReadRequestQueue</em></a>) – Request object parsed from
+user input.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – An invalid request is present in the request queue.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="geopmdpy.session.Session.format_signals">
 <span class="sig-name descname"><span class="pre">format_signals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geopmdpy.session.Session.format_signals" title="Link to this definition"></a></dt>
 <dd><p>Format a list of signal values for printing</p>
@@ -2359,7 +2362,7 @@ returned.</p>
 empty lists are returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Name of group</p>
+<dd class="field-odd"><p><strong>group</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – Group ID</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Signal and control allowed lists, in sorted order.</p>

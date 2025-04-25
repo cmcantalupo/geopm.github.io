@@ -4,10 +4,6 @@ Developer Guide
 If you wish to modify the source code in the GEOPM git repository, this guide
 provide instructions for the process.
 
-Before proceeding with the build steps, it's advisable to familiarize yourself
-with the build requirements for the :doc:`GEOPM Access Service<requires>` and
-:doc:`GEOPM Runtime Service<runtime>`.
-
 Developer Build Process
 -----------------------
 
@@ -134,7 +130,7 @@ Note that all tests must pass in order to generate a coverage report.
 Any help in increasing code coverage levels is appreciated.
 
 Coverage from the latest release is [posted to our web
-page](http://geopm.github.io/coverage/index.html).
+page](https://geopm.github.io/coverage/index.html).
 
 Coding Style
 ------------

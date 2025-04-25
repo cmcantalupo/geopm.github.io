@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Service Administrators" href="admin.html" />
-    <link rel="prev" title="Source Builds" href="build.html" /> 
+    <link rel="next" title="Service Clients" href="client.html" />
+    <link rel="prev" title="GEOPM Service" href="service_readme.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,12 +45,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="user_guides.html">User Guides</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="service.html">User Guide for GEOPM Service</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="service_readme.html">GEOPM Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="install.html">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="requires.html">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html">Source Builds</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Service Security</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#high-level-security-objectives">High-Level Security Objectives</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#secure-interfaces">Secure Interfaces</a></li>
@@ -65,6 +63,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">User Guide for GEOPM Runtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frequency_guide.html">User Guide for Frequency Control</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributor Guide</a></li>
@@ -294,6 +293,33 @@ other users. The ISST interface can also alter the hardware characteristics
 reported by the Linux kernel, including the number of cores, base frequency,
 and achievable turbo frequencies.</p>
 </section>
+<section id="xe-and-i915-drm-device-drivers">
+<h3>Xe and i915 DRM Device Drivers<a class="headerlink" href="#xe-and-i915-drm-device-drivers" title="Link to this heading"></a></h3>
+<p>The GEOPM Service can function as a gateway to the Xe and i915 DRM (Direct
+Rendering Manager) device drivers, which are loaded as part of the Linux
+kernel. These drivers provide access to GPU-related metrics and controls,
+such as energy consumption, power limits, and performance monitoring. The
+GEOPM Service enables fine-grained access to these features, allowing system
+administrators to control which signals and controls are exposed to users.
+For more information, see the <a class="reference external" href="https://www.kernel.org/doc/html/next/gpu/driver-uapi.html#drm-xe-uapi">Xe documentation</a> and
+the <a class="reference external" href="https://www.kernel.org/doc/html/next/gpu/i915.html">i915 documentation</a>.</p>
+</section>
+<section id="cpufreq-device-driver">
+<h3>Cpufreq Device Driver<a class="headerlink" href="#cpufreq-device-driver" title="Link to this heading"></a></h3>
+<p>The GEOPM Service can act as a gateway to the cpufreq device driver, which
+provides access to CPU frequency scaling metrics and controls. This includes
+signals for minimum and maximum CPU frequencies, as well as controls for
+setting frequency limits. The cpufreq driver is essential for managing CPU
+power and performance. For more information, see the <a class="reference external" href="https://docs.kernel.org/admin-guide/pm/cpufreq.html">cpufreq documentation</a>.</p>
+</section>
+<section id="powercap-device-driver">
+<h3>Powercap Device Driver<a class="headerlink" href="#powercap-device-driver" title="Link to this heading"></a></h3>
+<p>The GEOPM Service can also interface with the powercap device driver, which
+provides access to power capping and energy monitoring features. This includes
+signals for power consumption and energy usage, as well as controls for
+setting power limits. The powercap driver is critical for managing system
+power efficiency. For more information, see the <a class="reference external" href="https://www.kernel.org/doc/html/next/power/powercap/powercap.html">powercap documentation</a>.</p>
+</section>
 <section id="levelzero-sysman-library-interface">
 <h3>LevelZero Sysman Library Interface<a class="headerlink" href="#levelzero-sysman-library-interface" title="Link to this heading"></a></h3>
 <p>The LevelZero sysman library interface allows users to monitor and control
@@ -414,7 +440,7 @@ facing APIs provided by the GEOPM Service that take paths as
 input. All directory paths used in the GEOPM Service are statically
 defined in the source code.</p>
 <p>A secure API for dealing with files and directories resides in
-<a class="reference external" href="https://github.com/geopm/geopm/blob/dev/service/geopmdpy/system_files.py">system_files.py</a>.
+<a class="reference external" href="https://github.com/geopm/geopm/blob/dev/geopmdpy/geopmdpy/system_files.py">system_files.py</a>.
 The functions that match the pattern system_files.secure_*() are the
 only interfaces called by the GEOPM Service to access files located in
 <code class="docutils literal notranslate"><span class="pre">/etc</span></code> and <code class="docutils literal notranslate"><span class="pre">/run</span></code>. These secure functions are used to make
@@ -464,7 +490,7 @@ request.</p>
 configured through the
 <a class="reference external" href="https://man7.org/linux/man-pages/man5/systemd.service.5.html">systemd.service(5)</a>
 file.  The configuration file provided with the GEOPM source code,
-<a class="reference external" href="https://github.com/geopm/geopm/blob/dev/service/geopm.service">geopm.service</a>,
+<a class="reference external" href="https://github.com/geopm/geopm/blob/dev/geopmdpy/geopm.service">geopm.service</a>,
 does not export the <code class="docutils literal notranslate"><span class="pre">GEOPM_PLUGIN_PATH</span></code> environment variable before
 launching <code class="docutils literal notranslate"><span class="pre">geopmd</span></code>, so this feature is disabled by default.</p>
 <p>GEOPM also uses third-party JSON libraries for C/C++ runtime and multiple
@@ -481,14 +507,14 @@ remains current.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="build.html" class="btn btn-neutral float-left" title="Source Builds" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="admin.html" class="btn btn-neutral float-right" title="Service Administrators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="service_readme.html" class="btn btn-neutral float-left" title="GEOPM Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="client.html" class="btn btn-neutral float-right" title="Service Clients" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2024 Intel Corporation. All rights reserved..</p>
+    <p>&#169; Copyright 2015 - 2025 Intel Corporation. All rights reserved..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -45,6 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guides.html">User Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devel.html">Developer Guide</a></li>
@@ -68,6 +69,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopmaccess.1.html">geopmaccess(1) – Access management for the GEOPM Service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmadmin.1.html">geopmadmin(1) – tool for GEOPM system administrators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmagent.1.html">geopmagent(1) – query agent information and create static policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopmbatch.1.html">geopmbatch(1) – Command line interface for the GEOPM batch server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmbench.1.html">geopmbench(1) – synthetic benchmark application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmctl.1.html">geopmctl(1) – GEOPM runtime control application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmendpoint.1.html">geopmendpoint(1) – command line tool for dynamic policy control</a></li>
@@ -139,6 +141,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopm_report.7.html">geopm_report(7) – GEOPM summary report file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_cpu_activity.7.html">geopm_agent_cpu_activity(7) – agent for selecting CPU frequency based on CPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_ffnet.7.html">geopm_agent_ffnet(7) – agent for adjusting frequencies based on application behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_balancer.7.html">geopm_agent_frequency_balancer(7) – Agent reduces imbalance across CPU cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_map.7.html">geopm_agent_frequency_map(7) – agent for running regions at user selected frequencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_gpu_activity.7.html">geopm_agent_gpu_activity(7) – agent for selecting GPU frequency based on GPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_monitor.7.html">geopm_agent_monitor(7) – agent implementation for aggregating statistics</a></li>
@@ -228,8 +231,8 @@ available through their respective single accessor functions:
 <code class="docutils literal notranslate"><span class="pre">geopm::agent_factory()</span></code>, <code class="docutils literal notranslate"><span class="pre">geopm::iogroup_factory()</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">geopm::comm_factory()</span></code>.</p>
 <p>A good starting point for implementing a new <code class="docutils literal notranslate"><span class="pre">Agent</span></code> or <code class="docutils literal notranslate"><span class="pre">IOGroup</span></code>
-plugin is to modify the examples found in the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/tutorial/agent">Agent tutorial</a> and
-the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/tutorial/iogroup">IOGroup tutorial</a>.
+plugin is to modify the examples found in the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/integration/tutorial/agent">Agent tutorial</a> and
+the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/integration/tutorial/iogroup">IOGroup tutorial</a>.
 This code is located in the GEOPM source under <code class="docutils literal notranslate"><span class="pre">tutorial/agent</span></code> and
 <code class="docutils literal notranslate"><span class="pre">tutorial/iogroup</span></code> respectively.</p>
 </section>
@@ -391,7 +394,7 @@ policy names required by the <code class="docutils literal notranslate"><span cl
 </section>
 <section id="example-register-iogroup-plugin">
 <h2>EXAMPLE: REGISTER IOGROUP PLUGIN<a class="headerlink" href="#example-register-iogroup-plugin" title="Link to this heading"></a></h2>
-<p>Please see the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/tutorial/iogroup">IOGroup tutorial</a> for more
+<p>Please see the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/integration/tutorial/iogroup">IOGroup tutorial</a> for more
 information.  This code is located in the GEOPM source under <code class="docutils literal notranslate"><span class="pre">tutorial/iogroup</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This example shows how to register an IOGroup plugin</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;geopm/IOGroup.hpp&gt;</span><span class="c1"> // geopm::IOGroup,</span>
@@ -427,7 +430,7 @@ information.  This code is located in the GEOPM source under <code class="docuti
 </section>
 <section id="example-register-agent-plugin">
 <h2>EXAMPLE: REGISTER AGENT PLUGIN<a class="headerlink" href="#example-register-agent-plugin" title="Link to this heading"></a></h2>
-<p>Please see the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/tutorial/agent">Agent tutorial</a> for more
+<p>Please see the <a class="reference external" href="https://github.com/geopm/geopm/tree/dev/integration/tutorial/agent">Agent tutorial</a> for more
 information.  This code is located in the GEOPM source under <code class="docutils literal notranslate"><span class="pre">tutorial/agent</span></code>.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This example shows how to register an Agent plugin</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;geopm/Agent.hpp&gt;</span><span class="c1">  // geopm::Agent,</span>
@@ -484,7 +487,7 @@ information.  This code is located in the GEOPM source under <code class="docuti
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2024 Intel Corporation. All rights reserved..</p>
+    <p>&#169; Copyright 2015 - 2025 Intel Corporation. All rights reserved..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

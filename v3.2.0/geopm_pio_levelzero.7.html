@@ -45,6 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guides.html">User Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devel.html">Developer Guide</a></li>
@@ -75,6 +76,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopmaccess.1.html">geopmaccess(1) – Access management for the GEOPM Service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmadmin.1.html">geopmadmin(1) – tool for GEOPM system administrators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmagent.1.html">geopmagent(1) – query agent information and create static policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopmbatch.1.html">geopmbatch(1) – Command line interface for the GEOPM batch server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmbench.1.html">geopmbench(1) – synthetic benchmark application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmctl.1.html">geopmctl(1) – GEOPM runtime control application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmendpoint.1.html">geopmendpoint(1) – command line tool for dynamic policy control</a></li>
@@ -132,6 +134,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopm_report.7.html">geopm_report(7) – GEOPM summary report file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_cpu_activity.7.html">geopm_agent_cpu_activity(7) – agent for selecting CPU frequency based on CPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_ffnet.7.html">geopm_agent_ffnet(7) – agent for adjusting frequencies based on application behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_balancer.7.html">geopm_agent_frequency_balancer(7) – Agent reduces imbalance across CPU cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_map.7.html">geopm_agent_frequency_map(7) – agent for running regions at user selected frequencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_gpu_activity.7.html">geopm_agent_gpu_activity(7) – agent for selecting GPU frequency based on GPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_monitor.7.html">geopm_agent_monitor(7) – agent implementation for aggregating statistics</a></li>
@@ -179,7 +182,7 @@ interface to provide hardware signals and controls for Intel GPUs.</p>
 <section id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h3>
 <p>To use the GEOPM LevelZero signals and controls GEOPM must be compiled against the oneAPI LevelZero libraries and must be run on a system with discrete GPUs supported by LevelZero.  To compile against the oneAPI LevelZero libraries geopm must be configured using the –enable-levelzero flag.  The optional –with-levelzero flag may be used to indicate the path of the required libraries.  In addition the user must export ZES_ENABLE_SYSMAN=1 as specified by the Intel oneAPI Level Zero Sysman documentation.  See the Sysman specification for more info on related environment variables and their usage.</p>
-<p>Since signals and controls are exposed via the Sysman API they will be impacted by Sysman environment variables.  Please review <a class="reference external" href="https://spec.oneapi.io/level-zero/latest/sysman/PROG.html#environment-variables">oneAPI LevelZero Sysman Environment Variables</a> and <a class="reference external" href="https://spec.oneapi.io/level-zero/latest/core/PROG.html#environment-variables">oneAPI LevelZero Core Programming Guide Environment Variables</a>.</p>
+<p>Since signals and controls are exposed via the Sysman API they will be impacted by Sysman environment variables.  Please review <a class="reference external" href="https://oneapi-src.github.io/level-zero-spec/level-zero/latest/sysman/PROG.html#environment-variables">oneAPI LevelZero Sysman Environment Variables</a> and <a class="reference external" href="https://oneapi-src.github.io/level-zero-spec/level-zero//latest/core/PROG.html#environment-variables">oneAPI LevelZero Core Programming Guide Environment Variables</a>.</p>
 </section>
 <section id="note-on-ras-signals">
 <h3>Note on RAS Signals<a class="headerlink" href="#note-on-ras-signals" title="Link to this heading"></a></h3>
@@ -623,7 +626,7 @@ control setting the signal must be read.</p>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
-<p><a class="reference external" href="https://spec.oneapi.io/level-zero/latest/sysman/PROG.html">oneAPI LevelZero Sysman</a>,
+<p><a class="reference external" href="https://oneapi-src.github.io/level-zero-spec/level-zero/latest/sysman/PROG.html">oneAPI LevelZero Sysman</a>,
 <a class="reference internal" href="geopm.7.html"><span class="doc">geopm(7)</span></a>,
 <a class="reference internal" href="geopm%3A%3AIOGroup.3.html"><span class="doc">geopm::IOGroup(3)</span></a>,
 <a class="reference internal" href="geopmwrite.1.html"><span class="doc">geopmwrite(1)</span></a>,
@@ -642,7 +645,7 @@ control setting the signal must be read.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2024 Intel Corporation. All rights reserved..</p>
+    <p>&#169; Copyright 2015 - 2025 Intel Corporation. All rights reserved..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

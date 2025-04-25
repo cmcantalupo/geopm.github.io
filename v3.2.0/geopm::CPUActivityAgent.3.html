@@ -45,6 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guides.html">User Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contrib.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devel.html">Developer Guide</a></li>
@@ -68,6 +69,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopmaccess.1.html">geopmaccess(1) – Access management for the GEOPM Service</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmadmin.1.html">geopmadmin(1) – tool for GEOPM system administrators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmagent.1.html">geopmagent(1) – query agent information and create static policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopmbatch.1.html">geopmbatch(1) – Command line interface for the GEOPM batch server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmbench.1.html">geopmbench(1) – synthetic benchmark application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmctl.1.html">geopmctl(1) – GEOPM runtime control application</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopmendpoint.1.html">geopmendpoint(1) – command line tool for dynamic policy control</a></li>
@@ -130,6 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="geopm_report.7.html">geopm_report(7) – GEOPM summary report file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_cpu_activity.7.html">geopm_agent_cpu_activity(7) – agent for selecting CPU frequency based on CPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_ffnet.7.html">geopm_agent_ffnet(7) – agent for adjusting frequencies based on application behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_balancer.7.html">geopm_agent_frequency_balancer(7) – Agent reduces imbalance across CPU cores</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_frequency_map.7.html">geopm_agent_frequency_map(7) – agent for running regions at user selected frequencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_gpu_activity.7.html">geopm_agent_gpu_activity(7) – agent for selecting GPU frequency based on GPU compute activity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="geopm_agent_monitor.7.html">geopm_agent_monitor(7) – agent implementation for aggregating statistics</a></li>
@@ -172,7 +175,7 @@
 <h1>geopm::CPUActivityAgent(3) – agent for selecting CPU frequency based on CPU compute activity<a class="headerlink" href="#geopm-cpuactivityagent-3-agent-for-selecting-cpu-frequency-based-on-cpu-compute-activity" title="Link to this heading"></a></h1>
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading"></a></h2>
-<p>#include <a class="reference external" href="https://github.com/geopm/geopm/blob/dev/libgeopm/src/CPUActivityAgent.hpp">&lt;geopm/CPUActivityAgent.hpp&gt;</a></p>
+<p>#include <a class="reference external" href="https://github.com/geopm/geopm/blob/dev/libgeopm/src/CPUActivityAgent.hpp">“CPUActivityAgent.hpp”</a></p>
 <p>Link with <code class="docutils literal notranslate"><span class="pre">-lgeopm</span></code> <strong>(MPI)</strong> or <code class="docutils literal notranslate"><span class="pre">-lgeopm</span></code> <strong>(non-MPI)</strong></p>
 </section>
 <section id="description">
@@ -181,14 +184,6 @@
 <a class="reference internal" href="geopm_agent_cpu_activity.7.html"><span class="doc">geopm_agent_cpu_activity(7)</span></a> man page.</p>
 <p>For more details on the implementation, see the
 <a class="reference external" href="https://geopm.github.io/geopm-runtime-dox/classgeopm_1_1_c_p_u_activity_agent.html">doxygen page</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is currently an experimental agent and is only available when
-building GEOPM with the <code class="docutils literal notranslate"><span class="pre">--enable-beta</span></code> flag. Some areas or aspects that
-are subject to change include its interface (e.g. the policy) and
-algorithm. It is also possible that this agent may be refactored and
-combined with other agents.</p>
-</div>
 </section>
 <section id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
@@ -209,7 +204,7 @@ combined with other agents.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2015 - 2024 Intel Corporation. All rights reserved..</p>
+    <p>&#169; Copyright 2015 - 2025 Intel Corporation. All rights reserved..</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
